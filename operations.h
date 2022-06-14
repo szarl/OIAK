@@ -1,3 +1,4 @@
+#pragma once
 int sum(int number1, int number2);
 
 int substract(int number1, int number2);

@@ -1,7 +1,9 @@
 ﻿#include <iostream>
 #include <stdlib.h>
 #include "operations.h"
+
 using namespace std;
+
 
 void displayMenu(int *userCase) {
   cout << "Choose operation" << endl;
@@ -21,42 +23,41 @@ void displayMenu(int *userCase) {
 
 // default return counted value
 int count(int *userCase, int &num1, int &num2) {
-  cout << *userCase;
-  switch(*userCase) {
-    case 1:
-      cout << "Suma: " << sum(num1, num2) <<endl;
-      break;
-    case 2:
-      cout << "Odejmowanie: " << substract(num1, num2) << endl;
-      break;
-    case 3:
-        cout << "Mnozenie: " << multiply(num1, num2) << endl;
-      break;
-    case 4:
-        cout << "Dzielenie: " << division(num1, num2) << endl;
-      break;
-    case 5:
-      cout << "Potegowanie: " << power(num1, num2) << endl;
-      break;
-    case 6:
-      cout << "Pierwiastkowanie: " << endl;
-      break;
-    case 7:
-        cout << "Modulo: " << modulo(num1, num2) << endl;
-      break;
-    case 8:
-      cout << "Print history " << endl;
-      break;
-    case 9:
-    // System
-      cout << "Exit " << endl;
-      exit(0);
-      break;
+    switch(*userCase) {
+        case 1:
+            cout << "Sum: " << sum(num1, num2) <<endl;
+            break;
+        case 2:
+            cout << "Substraction: " << substract(num1, num2) << endl;
+            break;
+        case 3:
+            cout << "Multiplication: " << multiply(num1, num2) << endl;
+            break;
+        case 4:
+            cout << "Division: " << division(num1, num2) << endl;
+            break;
+        case 5:
+            cout << "Power: " << power(num1, num2) << endl;
+            break;
+        case 6:
+            cout << "Square root: " << endl;
+            break;
+        case 7:
+            cout << "Modulo: " << modulo(num1, num2) << endl;
+            break;
+        case 8:
+            cout << "Print history " << endl;
+            break;
+        case 9:
+        // System
+            cout << "Exit " << endl;
+            exit(0);
+            break;
 
-  default:
-      // If the operator is other than +, -, * or /, error message is shown
-      cout << "There value doesn't exist !!!" << endl  << endl;
-      break;
+      default:
+          // If the operator is other than +, -, * or /, error message is shown
+          cout << "There value doesn't exist !!!" << endl  << endl;
+          break;
   }
 
 return 0;
@@ -68,10 +69,15 @@ int main() {
   cout << "Project is made by Karol Rutkowski 259197 && Konrad Jaklewicz 259163" << endl << endl << endl;
   int userCaseValue;
   int *userCase = &userCaseValue;
-  float number1, number2;
+  int number1, number2;
   while (true) {
-    displayMenu(userCase);
-    count(userCase, number1, number2);
+      cout << "Enter your first number: ";
+      cin >> number1;
+      cout << "Enter your second number: ";
+      cin >> number2;
+      cout << endl;
+      displayMenu(userCase);
+      count(userCase, number1, number2);
   }
   
   return 0;

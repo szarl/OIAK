@@ -4,7 +4,6 @@
 #include "operations.h"
 
 using namespace std;
-using namespace System;
 
 int sum(int number1, int number2)
 {

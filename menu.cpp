@@ -1,5 +1,6 @@
-# include <iostream>
+﻿#include <iostream>
 #include <stdlib.h>
+#include "operations.h"
 using namespace std;
 
 void displayMenu(int *userCase) {
@@ -8,8 +9,11 @@ void displayMenu(int *userCase) {
   cout << "2. - (minus): " << endl;
   cout << "3. * (mult): " << endl;
   cout << "4. / (div) " << endl;
-  cout << "5. Show history" << endl;
-  cout << "6. exit" << endl;
+  cout << "5. ^ (pow)" << endl;
+  cout << "6. ^(1/2) (sqrt)" << endl;
+  cout << "7. % (mod)" << endl;
+  cout << "8. Show history" << endl;
+  cout << "9. exit" << endl;
   cin >> *userCase;
 
   return;
@@ -20,21 +24,30 @@ int count(int *userCase, int &num1, int &num2) {
   cout << *userCase;
   switch(*userCase) {
     case 1:
-      cout << "Suma: " << endl;
+      cout << "Suma: " << sum(num1, num2) <<endl;
       break;
     case 2:
-      cout << "Odejmowanie " << endl;
+      cout << "Odejmowanie: " << substract(num1, num2) << endl;
       break;
     case 3:
-      cout << "Mnozenie " << endl;
+        cout << "Mnozenie: " << multiply(num1, num2) << endl;
       break;
     case 4:
-      cout << "Dzielenie " << endl;
+        cout << "Dzielenie: " << division(num1, num2) << endl;
       break;
     case 5:
-      cout << "Print history " << endl;
+      cout << "Potegowanie: " << power(num1, num2) << endl;
       break;
     case 6:
+      cout << "Pierwiastkowanie: " << endl;
+      break;
+    case 7:
+        cout << "Modulo: " << modulo(num1, num2) << endl;
+      break;
+    case 8:
+      cout << "Print history " << endl;
+      break;
+    case 9:
     // System
       cout << "Exit " << endl;
       exit(0);
@@ -52,10 +65,10 @@ return 0;
 // test method
 int main() {
   cout << "Welcome in assembly calculator!!!" << endl;
-  cout << "Project is made by Karol Rutkowski 259197 && ..." << endl << endl << endl;
+  cout << "Project is made by Karol Rutkowski 259197 && Konrad Jaklewicz 259163" << endl << endl << endl;
   int userCaseValue;
   int *userCase = &userCaseValue;
-  int number1, number2;
+  float number1, number2;
   while (true) {
     displayMenu(userCase);
     count(userCase, number1, number2);
